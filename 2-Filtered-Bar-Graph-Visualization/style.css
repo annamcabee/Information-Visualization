@@ -1,0 +1,108 @@
+
+	.axis {
+	  font: 10px sans-serif;
+	}
+	.t2 { font-size: 150%; }
+
+/*float*/
+.fl { float: left; }
+.fr { float: right; }
+.fn { float: none; }
+
+.title { padding-left: 260px;}
+
+.y-axis path {
+  fill: none;
+  stroke: none;
+}
+.y-axis line, 
+.x-axis path, .x-axis line {
+  fill: none;
+  stroke: #797979;
+  shape-rendering: crispEdges;
+}
+
+.xLabel, .value { text-anchor: middle; }
+
+.y-unit {
+  alignment-baseline: middle;
+}
+
+.y-unit-right {
+  text-anchor: end;
+}
+
+.wide-tick line{
+  stroke-width: 7px;
+}
+
+.numb, .y-axis text, .x-axis text {
+  pointer-events: none;
+}
+
+
+	.axis path,
+	.axis line {
+	  fill: none;
+	  stroke: #000;
+	  shape-rendering: crispEdges;
+	}
+
+	svg {
+		background-color: #cfcfcf;
+	}
+	svg_container {
+				background-color: #cfcfcf;
+	
+	}
+	h1 {
+		font-weight: 300;
+		color: #ffffff;
+		font-size: 18px;
+		margin: 25px 0px 25px 0px;
+		padding: 0;
+		text-transform: uppercase;
+		font-weight: 700;
+	}
+	h2 {
+		font-weight: 300;
+		color: #ffffff;
+		font-size: 12px;
+		margin: 25px 0px 25px 0px;
+		padding: 0;
+		text-transform: uppercase;
+		font-weight: 700;
+	}
+
+	body {
+		font: 11px sans-serif;
+		font-weight: 400;
+		text-align: center;
+		background: #000080;
+		color: #ff0000;
+		font-family: 'Montserrat', sans-serif;
+	}
+	.pr2 {
+		font-weight: 300;
+		color: #ADD8E6;
+		font-size: 12px;
+		margin: 25px 0px 25px 0px;
+		padding: 0;
+		text-transform: uppercase;
+		font-weight: 700;
+  		padding-right: 30px;
+	}
+	.mt1 {
+	  margin-top: 25px;
+	}
+	.pt1 {
+	  padding-top: 15px;
+	}
+	.pr2 {
+	  padding-right: 30px;
+	}
+
+	.ml2 {
+	  margin-left: 40px;
+	}
+

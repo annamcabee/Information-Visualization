@@ -1,0 +1,27 @@
+{
+  "name": "geolat",
+  "version": "1.0.0",
+  "description": "",
+  "main": "app.js",
+  "dependencies": {
+    "express": "^4.14.0",
+    "geolib": "^2.0.22",
+    "pg": "^6.1.0",
+    "pug": "^2.0.0-beta6",
+    "request": "^2.78.0",
+    "sequelize": "^3.24.3",
+    "socket.io": "^1.4.8"
+  },
+  "devDependencies": {},
+  "scripts": {
+    "start": "node app.js",
+    "dev": "nodemon app.js",
+    "local": "DATABASE_URL=$(heroku config:get DATABASE_URL -a geolat) heroku local",
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "node": "DATABASE_URL=$(heroku config:get DATABASE_URL -a geolat) node",
+    "populate": "DATABASE_URL=$(heroku config:get DATABASE_URL -a geolat) node populateDb.js",
+    "geocode": "DATABASE_URL=$(heroku config:get DATABASE_URL -a geolat) node geocode.js"
+  },
+  "author": "",
+  "license": "ISC"
+}

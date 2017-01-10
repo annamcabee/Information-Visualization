@@ -1,0 +1,76 @@
+doctype html
+html(lang='en')
+    head
+        meta(charset='utf-8')
+        meta(http-equiv='X-UA-Compatible', content='IE=edge')
+        meta(name='viewport', content='width=device-width, initial-scale=1')
+        title= title
+        link(rel="stylesheet", href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css")
+        link(rel="stylesheet", href="//code.jquery.com/ui/1.12.1/themes/base/jquery-ui.css")
+        link(rel="stylesheet", href="/public/css/main.css")
+
+    body
+        #agreement.modal.fade
+            .modal-dialog.modal-lg
+                .modal-content
+                    .modal-header
+                        button.close(type='button', data-dismiss='modal', aria-label='Close')
+                            span(aria-hidden='true') ×
+                        h4.modal-title Agreement for Data Collection
+                    .modal-body
+                        p Clicking 'Accept' will request access to your geolocation data as well as send a websocket echo to test the average trip time of your connection. To simply view the results, click 'Decline'.
+                    .modal-footer
+                        button#agree.btn.btn-success(type='button', data-dismiss='modal') Agree
+                        button.btn.btn-danger(type='button', data-dismiss='modal') Decline
+        .container
+            .row
+                .col-md-12
+                    h1.text-center Latency Agency
+            .row.well
+                .col-md-12
+                    p.text-center Latency Agency is a visualization aimed at showing users information about network latency in respective regions. The goal is to create a visual representation that will allow a user to compare latency (amount of time it takes a packet of information to travel a certain distance) and other network connection attributes in various regions of the world.  The visualization can show the correlation between distance from server, fluctuations in latency, and where traffic is coming from using a map view and a scatterplot. A user can filter the data displayed on both a map view and a scatterplot view to only display information relevant to a specific region the user is interested in if necessary.
+        .container-fluid
+            .row
+                .col-md-12.well
+                    #map
+        .container
+            .row.well
+                .col-md-3
+                    p Select which continents to look at:
+                    each continent, index in ['Africa', 'Asia', 'Australia', 'Europe', 'North America', 'South America']
+                        .checkbox
+                            label(id="continent-" + index)
+                                input(type='checkbox', id="continent-" + continent, value=continent)
+                                = continent
+                    hr
+                    #selectors
+                        label(for='xSel') Select X-Axis variable:
+                        select#xSelect.form-control
+                            option(value="rtt" selected="selected") Round Trip Time
+                            option(value="distance" ) Distance
+                            option(value="speed" ) Speed (Distance / Time)
+                        label#x-values
+                        #x-range-slider
+
+                    hr
+                    #ranges
+                        label(for='ySel') Select Y-Axis variable:
+                        select#ySelect.form-control
+                            option(value="rtt" ) Round Trip Time
+                            option(value="distance" selected="selected") Distance
+                            option(value="speed" ) Speed (Distance / Time)
+                        label#y-values
+                        #y-range-slider
+
+                .col-md-9
+                    #scatterplot.center-block
+
+        script(src="https://cdn.socket.io/socket.io-1.4.5.js")
+        script(src="https://code.jquery.com/jquery-1.12.4.js")
+        script(src="https://code.jquery.com/ui/1.12.1/jquery-ui.js")
+        script(src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js")
+        script(src="https://cdnjs.cloudflare.com/ajax/libs/d3/3.5.3/d3.min.js")
+        script(src="https://cdnjs.cloudflare.com/ajax/libs/topojson/1.6.9/topojson.min.js")
+        script(src="/public/js/datamaps.world.js")
+        script(src="/public/js/main.js")
+        script(src="/public/js/vis.js")
